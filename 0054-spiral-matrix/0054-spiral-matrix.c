@@ -3,54 +3,44 @@
  */
 int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSize) {
     *returnSize = (*matrixColSize) * matrixSize;
-    int jMax = *matrixColSize;
-    int iMax = matrixSize;
-    int jMin = -1;
-    int iMin = 0;
     int* result = malloc(*returnSize * sizeof(int));
-    int curr = 0;
-    int i = 0;
-    int j = 0;
+    int tab[7] = {0, 0, *matrixColSize, matrixSize, -1, 0, 0};
+    // j, i, jMax, iMax, jMin, iMin, curr
 
-    while(curr < *returnSize){
-        while(curr < *returnSize && j < jMax){
-            printf("%d\n", matrix[i][j]);
-            result[curr] = matrix[i][j];
-            curr++;
-            j++;
+    while(tab[6] < *returnSize){
+        while(tab[6] < *returnSize && tab[0] < tab[2]){
+            result[tab[6]] = matrix[tab[1]][tab[0]];
+            tab[6]++;
+            tab[0]++;
         }
-        j--;
-        i++;
-        while(curr < *returnSize && i < iMax){
-            printf("%d\n", matrix[i][j]);
-            result[curr] = matrix[i][j];
-            curr++;
-            i++;
+        tab[0]--;
+        tab[1]++;
+        while(tab[6] < *returnSize && tab[1] < tab[3]){
+            result[tab[6]] = matrix[tab[1]][tab[0]];
+            tab[6]++;
+            tab[1]++;
         }
-        i--;
-        j--;
-        while(curr < *returnSize && j > jMin){
-            printf("%d\n", matrix[i][j]);
-            result[curr] = matrix[i][j];
-            curr++;
-            j--;
+        tab[1]--;
+        tab[0]--;
+        while(tab[6] < *returnSize && tab[0] > tab[4]){
+            result[tab[6]] = matrix[tab[1]][tab[0]];
+            tab[6]++;
+            tab[0]--;
         }
-        j++;
-        i--;
-        while(curr < *returnSize && i > iMin){
-            printf("%d\n", matrix[i][j]);
-            result[curr] = matrix[i][j];
-            curr++;
-            i--;
+        tab[0]++;
+        tab[1]--;
+        while(tab[6] < *returnSize && tab[1] > tab[5]){
+            result[tab[6]] = matrix[tab[1]][tab[0]];
+            tab[6]++;
+            tab[1]--;
         }
-        i++;
-        j++;
+        tab[1]++;
+        tab[0]++;
 
-        jMax--;
-        iMax--;
-        jMin++;
-        iMin++;
+        tab[2]--;
+        tab[3]--;
+        tab[4]++;
+        tab[5]++;
     }
-
     return result;
 }
