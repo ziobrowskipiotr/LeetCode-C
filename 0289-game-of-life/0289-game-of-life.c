@@ -1,3 +1,4 @@
+//2
 int count(int i, int j, int** board, int boardSize, int* boardColSize){
     int cont = 0;
     if(i-1 >= 0){
