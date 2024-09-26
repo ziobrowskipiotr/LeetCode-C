@@ -10,6 +10,7 @@ void rotate(int** matrix, int matrixSize, int* matrixColSize) {
         matrixSize--;
         i++;
     }
+
     int* temp1;
     i = 0;
     while(i<*matrixColSize/2){
