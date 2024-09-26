@@ -15,7 +15,6 @@ int count(int i, int j, int** board, int boardSize, int* boardColSize){
             }
         }
     }
-
     if(i+1 < boardSize){
         if(board[i+1][j] == 1 || board[i+1][j] == 2){
             cont++;
@@ -37,7 +36,6 @@ int count(int i, int j, int** board, int boardSize, int* boardColSize){
             }
         }
     }
-
     if(i+1 == boardSize){
         if(j-1>=0){
             if(board[i][j-1] == 1 || board[i][j-1] == 2){
@@ -74,7 +72,6 @@ void gameOfLife(int** board, int boardSize, int* boardColSize) {
                     }                    
                     break;
             }
-
         }
     }
     for(int i=0; i<boardSize; i++){
