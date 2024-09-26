@@ -1,4 +1,4 @@
-
+//2
 void rotate(int** matrix, int matrixSize, int* matrixColSize) {
     int i = 0;
     while(i<*matrixColSize){
