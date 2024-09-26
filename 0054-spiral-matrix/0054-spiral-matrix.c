@@ -44,4 +44,5 @@ int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSi
         tab[5]++;
     }
     return result;
+
 }
