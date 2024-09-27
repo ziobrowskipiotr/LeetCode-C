@@ -29,13 +29,15 @@ bool hasPathSum(struct TreeNode* root, int targetSum) {
     if(root == NULL){
         return false;
     }
-    int val = 0;
-    int* value = &val;
+    int* value = malloc(sizeof(int));
+    *value = 0;
     dfs(root, targetSum, 0, value);
     if(*value == 1){
+        free(value);
         return true;
     }
     else{
+        free(value);
         return false;
     }
 }
