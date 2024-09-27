@@ -6,7 +6,7 @@
  *     struct TreeNode *right;
  * };
  */
- //1
+//1
 void dfs(struct TreeNode* root, int* tab, int i, int* sum){
     tab[i] = root->val; 
     if(root->left != NULL){
