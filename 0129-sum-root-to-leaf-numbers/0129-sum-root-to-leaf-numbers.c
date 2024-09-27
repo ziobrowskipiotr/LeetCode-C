@@ -16,7 +16,7 @@ void dfs(struct TreeNode* root, int* tab, int i, int* sum){
         dfs(root->right, tab, i+1, sum);
     }
     if(root->left == NULL && root->right == NULL){
-        int* numb = malloc(sizeof(int));
+        long int* numb = malloc(sizeof(long int));
         *numb = 1;
         for(int j=i; j>-1; j--){
             *sum += tab[j]*(*numb);
