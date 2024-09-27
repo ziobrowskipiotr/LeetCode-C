@@ -6,7 +6,7 @@
  *     struct TreeNode *right;
  * };
  */
-//
+//1
 void dfs(struct TreeNode* root, int* targetSum, int sum, int* value){
     if(*value < 1){
         sum += root->val;
