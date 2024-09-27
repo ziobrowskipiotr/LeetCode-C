@@ -8,7 +8,7 @@
  */
 
 //1
-void dfs(struct TreeNode* root, int targetSum, int sum, int* value){
+void dfs(struct TreeNode* root, int* targetSum, int sum, int* value){
     if(*value < 1){
         sum += root->val;
         if(root->left != NULL){
@@ -18,7 +18,7 @@ void dfs(struct TreeNode* root, int targetSum, int sum, int* value){
             dfs(root->right, targetSum, sum, value);
         }
         if(root->left == NULL && root->right == NULL){
-            if(sum == targetSum){
+            if(sum == *targetSum){
                 *value = 1;
             }
         }
@@ -31,7 +31,7 @@ bool hasPathSum(struct TreeNode* root, int targetSum) {
     }
     int* value = malloc(sizeof(int));
     *value = 0;
-    dfs(root, targetSum, 0, value);
+    dfs(root, &targetSum, 0, value);
     if(*value == 1){
         free(value);
         return true;
