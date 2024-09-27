@@ -23,14 +23,10 @@ void dfs(struct TreeNode* root, int* tab, int i, int* sum, long int* numb){
     }
 }
 int sumNumbers(struct TreeNode* root) {
-    int* tab = malloc(10*sizeof(int));
+    int tab[10];
     int sum = 0;
-    int* i = malloc(sizeof(int));
-    long int* numb = malloc(sizeof(long int));
-    *i = 0; 
-    dfs(root, tab, *i, &sum, numb);
-    free(tab);
-    free(numb);
-    free(i);
+    int i = 0;
+    long int numb;
+    dfs(root, &tab, i, &sum, &numb);
     return sum;
 }
