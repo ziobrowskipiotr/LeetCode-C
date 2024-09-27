@@ -16,10 +16,11 @@ void dfs(struct TreeNode* root, int targetSum, int sum, int* value){
         if(root->right != NULL){
             dfs(root->right, targetSum, sum, value);
         }
-        if(root->left == NULL && root->right == NULL)
+        if(root->left == NULL && root->right == NULL){
             if(sum == targetSum){
                 *value = 1;
             }
+        }
     }
 }
 
