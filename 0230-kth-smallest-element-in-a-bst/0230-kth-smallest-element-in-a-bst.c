@@ -6,6 +6,7 @@
  *     struct TreeNode *right;
  * };
  */
+//2
 void downDfs(struct TreeNode* root, int* k, int* i, int* num){
     if(root->left != NULL){
         downDfs(root->left, k, i, num);
