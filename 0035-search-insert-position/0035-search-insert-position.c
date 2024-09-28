@@ -1,4 +1,3 @@
-//2
 int searchInsert(int* nums, int numsSize, int target){
     int ip = 0;
     int ik = numsSize-1;
