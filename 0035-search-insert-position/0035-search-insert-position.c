@@ -3,9 +3,7 @@ int searchInsert(int* nums, int numsSize, int target){
     int ik = numsSize-1;
     int is = (ik+ip)/2;
     while(ip<=ik){
-        printf("is: %d\n, ip: %d\n, ik: %d\n", is, ip, ik);
         if(nums[is] == target){
-            printf("1, %d\n", is);
             return is;
         }
         else if(nums[is] > target){
@@ -13,7 +11,6 @@ int searchInsert(int* nums, int numsSize, int target){
                 return is;
             }
             else if(nums[is-1] < target){
-                printf("2, %d\n", is);
                 return is;
             }
             else{
@@ -25,7 +22,6 @@ int searchInsert(int* nums, int numsSize, int target){
                 return is+1;
             }
             else if(nums[is+1] > target){
-                printf("3, %d\n", is);
                 return is+1;
             }
             else{
