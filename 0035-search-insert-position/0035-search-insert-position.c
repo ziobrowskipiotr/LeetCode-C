@@ -8,28 +8,12 @@ int searchInsert(int* nums, int numsSize, int target){
             return is;
         }
         else if(nums[is] > target){
-            if(is-1<ip){
-                return is;
-            }
-            else if(nums[is-1] < target){
-                return is;
-            }
-            else{
-                ik = is - 1;
-            }
+            ik = is - 1;
         }
         else{
-            if(is+1 > ik){
-                return is+1;
-            }
-            else if(nums[is+1] > target){
-                return is+1;
-            }
-            else{
-                ip = is + 1;
-            }
+            ip = is + 1;
         }
         is = (ik+ip)/2;
     }
-    return -1;
+    return ip;
 }
