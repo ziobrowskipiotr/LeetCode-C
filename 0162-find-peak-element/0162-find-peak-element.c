@@ -10,10 +10,12 @@ int findPeakElement(int* nums, int numsSize) {
             }
             else{
                 ik = is-1;
+                continue;
             }
         }
         else{
             ip = is+1;
+            continue;
         }
     }
     return ip;
