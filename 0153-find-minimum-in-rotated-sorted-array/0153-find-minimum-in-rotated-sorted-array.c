@@ -1,4 +1,3 @@
-//1
 int findMin(int* nums, int numsSize) {
     int ip = 0;
     int ik = numsSize-1;
