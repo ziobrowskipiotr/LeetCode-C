@@ -18,14 +18,14 @@ bool searchMatrix(int** matrix, int matrixSize, int* matrixColSize, int target) 
                         jp = js+1;
                     }
                 }
-                return false;
+                break;
             }
             else{
                 i++;
             }
         }
         else{
-            return false;
+            break;
         }
     }
     return false;        
