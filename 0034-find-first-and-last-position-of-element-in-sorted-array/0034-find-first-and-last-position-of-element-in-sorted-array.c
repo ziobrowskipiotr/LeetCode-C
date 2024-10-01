@@ -12,42 +12,38 @@ int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
     int ip = 0;
     int ik = numsSize-1;
     int is;
-    while(true){
+    while(result[0] < 0 && result[1] < 0){
         is = (ip+ik)/2;
         if(nums[is] == target){
-            int ip_left = ip;
-            int ik_left = is;
-            int is_left;
-            int ip_right = is;
-            int ik_right = ik;
-            int is_right;
-            while(true){
-                if(nums[ip_left] == target){
-                    result[0] = ip_left;
-                    break;
+            int tab[3] = {ip, is, -1};
+            //ip_left, ik_left, is_left
+            while(result[0] < 0){
+                if(nums[tab[0]] == target){
+                    result[0] = tab[0];
                 }
-                is_left = (ip_left + ik_left)/2;
-                if(nums[is_left] < target){
-                    ip_left = is_left+1;
+                tab[2] = (tab[0] + tab[1])/2;
+                if(nums[tab[2]] < target){
+                    tab[0] = tab[2]+1;
                 }
                 else{
-                    ik_left = is_left-1;
+                    tab[1] = tab[2]-1;
                 }
             }
-            while(true){
-                if(nums[ik_right] == target){
-                    result[1] = ik_right;
-                    break;
+            tab[0] = is; //ip_right
+            tab[1] = ik; //ik_right
+            tab[2] = -1; //is_right
+            while(result[1] < 0){
+                if(nums[tab[1]] == target){
+                    result[1] = tab[1];
                 }
-                is_right = (ip_right + ik_right)/2;
-                if(nums[is_right] > target){
-                    ik_right = is_right-1;
+                tab[2] = (tab[0] + tab[1])/2;
+                if(nums[tab[2]] > target){
+                    tab[1] = tab[2]-1;
                 }
                 else{
-                    ip_right = is_right+1;
+                    tab[0] = tab[2]+1;
                 }
             }
-            break;
         }
         else{
             if(nums[ip] <= target && target <= nums[is]){
