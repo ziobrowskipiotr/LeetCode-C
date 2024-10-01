@@ -1,7 +1,6 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-//1
 int* searchRange(int* nums, int numsSize, int target, int* returnSize){
     *returnSize = 2;
     int* result = malloc(2 * sizeof(int));
@@ -17,7 +16,7 @@ int* searchRange(int* nums, int numsSize, int target, int* returnSize){
         is = (ip+ik)/2;
         if(nums[is] == target){
             int tab[3] = {ip, is, -1};
-            //ip_left, ik_left, is_left
+            //ip_left, ik_left, is_left,
             while(result[0] < 0){
                 if(nums[tab[0]] == target){
                     result[0] = tab[0];
