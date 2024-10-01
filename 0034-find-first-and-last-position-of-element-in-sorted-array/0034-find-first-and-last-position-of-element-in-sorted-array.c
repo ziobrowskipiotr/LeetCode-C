@@ -29,8 +29,8 @@ int* searchRange(int* nums, int numsSize, int target, int* returnSize){
                     tab[1] = tab[2]-1;
                 }
             }
-            tab[0] = is; //ip_right,
-            tab[1] = ik; //ik_right,
+            tab[0] = is; //ip_right
+            tab[1] = ik; //ik_right
             tab[2] = -1; //is_right
             while(result[1] < 0){
                 if(nums[tab[1]] == target){
