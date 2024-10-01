@@ -2,7 +2,7 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 //2
-int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
+int* searchRange(int* nums, int numsSize, int target, int* returnSize){
     *returnSize = 2;
     int* result = malloc(2 * sizeof(int));
     result[0] = -1;
