@@ -1,6 +1,7 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+//1
 int* searchRange(int* nums, int numsSize, int target, int* returnSize){
     *returnSize = 2;
     int* result = malloc(2 * sizeof(int));
