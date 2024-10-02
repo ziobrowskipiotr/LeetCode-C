@@ -6,6 +6,7 @@
  *     struct TreeNode *right;
  * };
  */
+
 void left(int actual, int ip, int ik, struct TreeNode* tab){
     if(ip<=ik){
         int is = (ip+ik)/2;
