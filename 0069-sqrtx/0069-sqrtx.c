@@ -1,6 +1,6 @@
 int mySqrt(int x) {
     int i = 0;
-    long int a = 0;
+    unsigned int a = 0;
     int r1 = 1;
     int r2 = 2;
     while(a<=x){
