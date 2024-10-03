@@ -5,22 +5,25 @@ int mySqrt(int x) {
     if(x<2){
         return 1;
     }
-    long* tab = malloc(4*sizeof(long));
-    tab[0] = 0;
-    tab[1] = 1;
-    tab[2] = x/2;
-    while(tab[1]<=tab[2]){
-        tab[3] = (tab[1]+tab[2])/2;
-        if(tab[3] * tab[3] == x){
-            return (int)tab[3];
+    int result;
+    long* tab = malloc(3*sizeof(long));
+    tab[0] = 1;
+    tab[1] = x/2;
+    while(tab[0]<=tab[1]){
+        tab[2] = (tab[0]+tab[1])/2;
+        if(tab[2] * tab[2] == x){
+            result = (int)tab[2];
+            free(tab);
+            return result;
         }
-        else if(tab[3] * tab[3] < x){
-            tab[1] = tab[3]+1;
-            tab[0] = tab[3];
+        else if(tab[2] * tab[2] < x){
+            tab[0] = tab[2]+1;
+            result = tab[2];
         }
         else{
-            tab[2] = tab[3]-1;
+            tab[1] = tab[2]-1;
         }
     }
-    return (int)tab[0];
+    free(tab);
+    return result;
 }
