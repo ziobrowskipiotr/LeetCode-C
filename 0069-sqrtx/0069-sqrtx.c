@@ -9,6 +9,7 @@ int mySqrt(int x) {
     long* tab = malloc(3*sizeof(long));
     tab[0] = 1;
     tab[1] = x/2;
+    //binary serach
     while(tab[0]<=tab[1]){
         tab[2] = (tab[0]+tab[1])/2;
         if(tab[2] * tab[2] == x){
