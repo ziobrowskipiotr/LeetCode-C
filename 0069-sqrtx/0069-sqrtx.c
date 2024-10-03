@@ -5,22 +5,22 @@ int mySqrt(int x) {
     if(x<2){
         return 1;
     }
-    long ans = 0;
-    long left = 1;
-    long right = x/2;
-    long medium;
-    while(left<=right){
-        medium = (left+right)/2;
-        if(medium * medium == x){
-            return (int)medium;
+    long tab[4];
+    tab[0] = 0;
+    tab[1] = 1;
+    tab[2] = x/2;
+    while(tab[1]<=tab[2]){
+        tab[3] = (tab[1]+tab[2])/2;
+        if(tab[3] * tab[3] == x){
+            return (int)tab[3];
         }
-        else if(medium * medium < x){
-            left = medium+1;
-            ans = medium;
+        else if(tab[3] * tab[3] < x){
+            tab[1] = tab[3]+1;
+            tab[0] = tab[3];
         }
         else{
-            right = medium-1;
+            tab[2] = tab[3]-1;
         }
     }
-    return (int)ans;
+    return (int)tab[0];
 }
