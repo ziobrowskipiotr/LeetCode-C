@@ -1,14 +1,26 @@
 int mySqrt(int x) {
-    int i = 0;
-    unsigned int* tab = malloc(3*sizeof(unsigned int));
-    tab[0] = 0;
-    tab[1] = 1;
-    tab[2] = 2;
-    while(tab[0]<=x){
-        tab[0] = tab[0]+tab[1];
-        tab[1] = tab[1] + tab[2];
-        i = i+1;
+    if(x==0){
+        return x;
     }
-    free(tab);
-    return i-1;
+    if(x<2){
+        return 1;
+    }
+    long ans = 0;
+    long left = 1;
+    long right = x/2;
+    long medium;
+    while(left<=right){
+        medium = (left+right)/2;
+        if(medium * medium == x){
+            return (int)medium;
+        }
+        else if(medium * medium < x){
+            left = medium+1;
+            ans = medium;
+        }
+        else{
+            right = medium-1;
+        }
+    }
+    return (int)ans;
 }
