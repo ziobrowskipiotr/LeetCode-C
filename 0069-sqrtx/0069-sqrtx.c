@@ -5,7 +5,7 @@ int mySqrt(int x) {
     if(x<2){
         return 1;
     }
-    long tab[4];
+    long* tab = malloc(4*sizeof(long));
     tab[0] = 0;
     tab[1] = 1;
     tab[2] = x/2;
