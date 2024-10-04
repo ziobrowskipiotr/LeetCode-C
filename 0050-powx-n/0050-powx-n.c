@@ -15,7 +15,7 @@ double pos_Pow(double ans, double x, unsigned int n, int med){
 }
 
 double myPow(double x, int n) {
-    if(n == 0 || x == 1){
+    if(n == 0){
         return 1;
     }
     double ans = 1;
