@@ -1,3 +1,4 @@
+//recursion
 void pos_Pow(double* ans, double* x, unsigned int n, int med){
     if(n < 2){
         *ans = *x;
