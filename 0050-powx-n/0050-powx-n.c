@@ -1,16 +1,17 @@
-double pos_Pow(double ans, double* x, unsigned int n, int med){
+void pos_Pow(double* ans, double* x, unsigned int n, int med){
     if(n < 2){
-        return *x;
+        *ans = *x;
+        return;
     }
     med = n/2;
-    ans = pos_Pow(ans, x, med, med);
+    pos_Pow(ans, x, med, med);
     if(n%2 == 1){
-        ans *= ans*(*x);
-        return ans;
+        *ans *= *ans*(*x);
+        return;
     }
     else{
-        ans *= ans;
-        return ans;
+        *ans *= *ans;
+        return;
     }
 }
 
@@ -23,12 +24,14 @@ double myPow(double x, int n) {
     unsigned int exp;
     if(n > 0){
         exp = n;
-        return pos_Pow(ans, &x, exp, med);
+        pos_Pow(&ans, &x, exp, med);
+        return ans;
     }
     else{
         n++;
         exp = -n;
         exp++;
-        return 1/pos_Pow(ans, &x, exp, med);
+        pos_Pow(&ans, &x, exp, med);
+        return 1/ans;
     }
 }
