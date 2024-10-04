@@ -1,11 +1,11 @@
-double pos_Pow(double ans, double x, unsigned int n, int med){
+double pos_Pow(double ans, double* x, unsigned int n, int med){
     if(n < 2){
-        return x;
+        return *x;
     }
     med = n/2;
     ans = pos_Pow(ans, x, med, med);
     if(n%2 == 1){
-        ans *= ans*(x);
+        ans *= ans*(*x);
         return ans;
     }
     else{
@@ -23,12 +23,12 @@ double myPow(double x, int n) {
     unsigned int exp;
     if(n > 0){
         exp = n;
-        return pos_Pow(ans, x, exp, med);
+        return pos_Pow(ans, &x, exp, med);
     }
     else{
         n++;
         exp = -n;
         exp++;
-        return 1/pos_Pow(ans, x, exp, med);
+        return 1/pos_Pow(ans, &x, exp, med);
     }
 }
