@@ -14,7 +14,7 @@ void pos_Pow(double* ans, double* x, unsigned int n, int med){
         return;
     }
 }
-
+//
 double myPow(double x, int n) {
     if(n == 0){
         return 1;
