@@ -3,10 +3,10 @@ bool isPalindrome(int x) {
         return false;
     }
     int j = 1;
+    int i = 1;
     while(j <= x/10){
         j *= 10;
     }
-    int i = 1;
     while(j>=i){
         if((x%(i*10))/i != (x/j)%10){
             return false;
