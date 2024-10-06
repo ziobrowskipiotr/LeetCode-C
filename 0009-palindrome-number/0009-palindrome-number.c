@@ -11,7 +11,7 @@ bool isPalindrome(int x) {
         j *= 10;
     }
     while(j>=i){
-        if((x%(i*10))/i != (x/j)%10){
+        if(x/i%10 != x/j%10){
             return false;
         }
         i *= 10;
