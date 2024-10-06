@@ -1,6 +1,7 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+//1
 int* change(int* digits, int* digitsSize, int* returnSize){
     if(digits[*digitsSize] == 9){
         digits[*digitsSize] = 0;
