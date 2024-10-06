@@ -3,7 +3,7 @@ bool isPalindrome(int x) {
         return false;
     }
     int j = 1; //low
-    int i = 1; //high
+    int i = 1;
     while(j <= x/10){
         j *= 10;
     }
