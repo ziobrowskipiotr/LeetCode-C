@@ -5,8 +5,8 @@ bool isPalindrome(int x) {
     if(x<10){
         return true;
     }
-    int j = 1; //low
-    int i = 1; //high
+    int j = 1;
+    int i = 1;
     while(j <= x/10){
         j *= 10;
     }
