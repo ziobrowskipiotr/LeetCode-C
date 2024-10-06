@@ -1,10 +1,9 @@
 //2
 int trailingZeroes(int n) {
-    int num = 5;
     int result = 0;
-    while(num <= n){
-        result += n/num;
-        num *= 5;
+    while(n>=5){
+        result += n/5;
+        n /= 5;
     }
     return result;
 }
