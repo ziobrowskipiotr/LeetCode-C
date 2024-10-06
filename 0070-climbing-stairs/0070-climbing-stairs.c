@@ -1,4 +1,3 @@
-//1
 int climbStairs(int n) {
     int n1 = 1;
     int n2 = 1;
