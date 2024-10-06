@@ -13,7 +13,7 @@ int* change(int* digits, int actual, int* returnSize){
             return digits_new;
         }
         else{        
-            change(digits, actual-1, returnSize);
+            return change(digits, actual-1, returnSize);
         }
     }
     digits[actual]++;
