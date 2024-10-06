@@ -4,13 +4,13 @@
 int* change(int* digits, int* result, int actual, int* returnSize){
     if(digits[actual] == 9){
         result[actual+1] = 0;
-        if(actual == 0){
+        if(actual > 0){        
+            return change(digits, result, actual-1, returnSize);
+        }
+        else{
             (*returnSize)++;
             result[0] = 1;
             return result;
-        }
-        else{        
-            return change(digits, result, actual-1, returnSize);
         }
     }
     memcpy(result+1, digits, (actual+1)*sizeof(int));
