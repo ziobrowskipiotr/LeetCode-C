@@ -2,9 +2,6 @@ bool isPalindrome(int x) {
     if(x<0){
         return false;
     }
-    if(x<10){
-        return true;
-    }
     int j = 1; //low
     int i = 1; //high
     while(j <= x/10){
