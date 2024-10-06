@@ -1,3 +1,4 @@
+//2
 int trailingZeroes(int n) {
     int result = 0;
     while(n>=5){
