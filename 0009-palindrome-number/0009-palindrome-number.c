@@ -6,15 +6,13 @@ bool isPalindrome(int x) {
     while(j <= (unsigned int)x/10){
         j *= 10;
     }
-    unsigned int i = 10;
+    unsigned int i = 1;
     unsigned int val1 = x%i;
     unsigned int val2 = x/j;
     while(j>=i){
-        if(val1 != val2){
+        if((x%(i*10))/i != (x/j)%10){
             return false;
         }
-        val1 = (x%(i*10))/i;
-        val2 = (x/(j/10))%10;
         i *= 10;
         j /= 10;
     }
