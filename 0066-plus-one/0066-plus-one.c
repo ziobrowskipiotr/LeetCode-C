@@ -1,25 +1,24 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* change(int* digits, int actual, int* returnSize){
+int* change(int* digits, int* result, int actual, int* returnSize){
     if(digits[actual] == 9){
-        digits[actual] = 0;
+        result[actual+1] = 0;
         if(actual == 0){
             (*returnSize)++;
-            int* digits_new = malloc(*returnSize*sizeof(int));
-            digits_new[0] = 1;
-            memcpy(digits_new + 1, digits, ((*returnSize)-1)*sizeof(int));
-            free(digits);
-            return digits_new;
+            result[0] = 1;
+            return result;
         }
         else{        
-            return change(digits, actual-1, returnSize);
+            return change(digits, result, actual-1, returnSize);
         }
     }
-    digits[actual]++;
-    return digits;
+    memcpy(result+1, digits, (actual+1)*sizeof(int));
+    result[actual+1]++;
+    return result+1;
 }
 int* plusOne(int* digits, int digitsSize, int* returnSize) {
+    int* result = malloc((digitsSize+1)*sizeof(int));
     *returnSize = digitsSize;
-    return change(digits, digitsSize-1, returnSize);
+    return change(digits, result, digitsSize-1, returnSize);
 }
